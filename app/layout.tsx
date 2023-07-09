@@ -20,7 +20,7 @@ export default function RootLayout({
         {children}
         <Link
           href="/components/Settings"
-          className="text-white block bg-transparent w-fit h-fit fixed bottom-5 right-5 md:bottom-10 md:left-28"
+          className="text-white hidden md:block bg-transparent w-fit h-fit fixed bottom-5 right-5 md:bottom-10 md:left-28"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
