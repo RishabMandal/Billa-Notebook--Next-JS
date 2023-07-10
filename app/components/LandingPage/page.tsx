@@ -229,7 +229,6 @@ const LandingPage = () => {
             onClick={() => {
               navigator.vibrate(150);
               navigator.clipboard.writeText(inputRef.current.value);
-              // alert("Clipboard has been updated");
               setOpen(true);
             }}
           >
@@ -265,7 +264,7 @@ const LandingPage = () => {
                       setFontsize("text-lg");
                     }}
                     stroke="currentColor"
-                    className="w-12 h-12 hover:scale-75 transition ease-in"
+                    className="w-9 h-9 hover:scale-75 transition ease-in"
                   >
                     <path
                       strokeLinecap="round"
@@ -286,7 +285,7 @@ const LandingPage = () => {
                       setFontsize("text-4xl");
                     }}
                     stroke="currentColor"
-                    className="w-12 h-12 hover:scale-125 ml-5 cursor-pointer transition ease-in"
+                    className="w-9 h-9 hover:scale-125 ml-5 cursor-pointer transition ease-in"
                   >
                     <path
                       strokeLinecap="round"
@@ -305,7 +304,7 @@ const LandingPage = () => {
                 <Link href="/components/FilesUpload">
                   {/* <Link href="/components/FilesUpload">View uploaded files</Link> */}
                   <TbFileSearch
-                    size={40}
+                    size={30}
                     style={{ marginLeft: "auto", marginRight: "auto" }}
                   />
                   {/* {expanded && (
@@ -319,7 +318,7 @@ const LandingPage = () => {
                 <Link href="/components/ImageUpload">
                   {/* <Link href="/components/ImageUpload">View uploaded images</Link> */}
                   <MdImageSearch
-                    size={40}
+                    size={30}
                     style={{ marginLeft: "auto", marginRight: "auto" }}
                   />
                 </Link>
@@ -333,7 +332,7 @@ const LandingPage = () => {
               >
                 {/* Upload this note */}
                 <BsUpload
-                  size={40}
+                  size={30}
                   style={{ marginLeft: "auto", marginRight: "auto" }}
                 />
               </div>
@@ -347,7 +346,7 @@ const LandingPage = () => {
                 }}
               >
                 <MdOutlineContentCopy
-                  size={40}
+                  size={30}
                   style={{ marginLeft: "auto", marginRight: "auto" }}
                 />
               </div>
@@ -356,7 +355,7 @@ const LandingPage = () => {
           <Alert open={open} setOpen={setOpen} title="Copied to Clipboard!" />
           <div className="mt-5 flex flex-row items-center">
             <div onClick={() => setOpenNavbar(!openNavbar)}>
-              <CgMoreO size={40} />
+              <CgMoreO size={30} />
             </div>
             {openNavbar && (
               <motion.div
@@ -377,7 +376,7 @@ const LandingPage = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-12 h-12 cursor-pointer hover:rotate-90 duration-200"
+                    className="w-9 h-9 cursor-pointer hover:rotate-90 duration-200"
                   >
                     <path
                       strokeLinecap="round"
