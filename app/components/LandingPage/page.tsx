@@ -123,8 +123,8 @@ const LandingPage = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 onClick={() => {
-                  navigator.vibrate(150);
                   setFontsize("text-lg");
+                  window?.navigator?.vibrate?.(125);
                 }}
                 stroke="currentColor"
                 className="w-12 h-12 hover:scale-75 transition ease-in"
@@ -144,8 +144,8 @@ const LandingPage = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 onClick={() => {
-                  navigator.vibrate(150);
                   setFontsize("text-4xl");
+                  window?.navigator?.vibrate?.(125);
                 }}
                 stroke="currentColor"
                 className="w-12 h-12 hover:scale-125 ml-5 cursor-pointer transition ease-in"
@@ -207,8 +207,8 @@ const LandingPage = () => {
             }}
             className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
             onClick={() => {
-              navigator.vibrate(150);
               setTextareaNotes(inputRef.current.value);
+              window?.navigator?.vibrate?.(125);
             }}
           >
             {/* Upload this note */}
@@ -227,9 +227,9 @@ const LandingPage = () => {
             }}
             className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
             onClick={() => {
-              navigator.vibrate(150);
               navigator.clipboard.writeText(inputRef.current.value);
               setOpen(true);
+              window?.navigator?.vibrate?.(125);
             }}
           >
             {/* Copy this note */}
@@ -260,8 +260,8 @@ const LandingPage = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     onClick={() => {
-                      navigator.vibrate(150);
                       setFontsize("text-lg");
+                      window?.navigator?.vibrate?.(125);
                     }}
                     stroke="currentColor"
                     className="w-9 h-9 hover:scale-75 transition ease-in"
@@ -281,8 +281,8 @@ const LandingPage = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     onClick={() => {
-                      navigator.vibrate(150);
                       setFontsize("text-4xl");
+                      window?.navigator?.vibrate?.(125);
                     }}
                     stroke="currentColor"
                     className="w-9 h-9 hover:scale-125 ml-5 cursor-pointer transition ease-in"
@@ -326,8 +326,8 @@ const LandingPage = () => {
               <div
                 className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
                 onClick={() => {
-                  navigator.vibrate(150);
                   setTextareaNotes(inputRef.current.value);
+                  window?.navigator?.vibrate?.(125);
                 }}
               >
                 {/* Upload this note */}
@@ -339,10 +339,10 @@ const LandingPage = () => {
               <div
                 className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
                 onClick={() => {
-                  navigator.vibrate(150);
                   navigator.clipboard.writeText(inputRef.current.value);
                   // alert("Clipboard has been updated");
                   setOpen(true);
+                  window?.navigator?.vibrate?.(125);
                 }}
               >
                 <MdOutlineContentCopy
