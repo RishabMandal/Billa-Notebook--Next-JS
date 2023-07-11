@@ -17,7 +17,9 @@ import { MdImageSearch, MdOutlineContentCopy } from "react-icons/md";
 import { BsUpload } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 import { Pacifico } from "next/font/google";
+import { Poppins } from "next/font/google";
 const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
+// const pacifico = Poppins({ subsets: ["latin"], weight: "400" });
 
 const LandingPage = () => {
   const inputRef = useRef<any>();
@@ -114,7 +116,7 @@ const LandingPage = () => {
       </div>
       <div className="flex flex-col md:flex-row w-full">
         {/* Buttons For bigger screen  */}
-        <div className="hidden md:block md:w-fit z-10 mx-auto md:mr-10 h-fit md:sticky md:top-10">
+        <div className="hidden md:block md:w-fit z-10 mx-auto md:mr-10 h-fit">
           <div className="flex flex-row justify-evenly">
             <button>
               <svg
@@ -359,13 +361,14 @@ const LandingPage = () => {
             </div>
             {openNavbar && (
               <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.3,
-                ease: "easeOut",
-              }}>
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3,
+                  ease: "easeOut",
+                }}
+              >
                 <Link
                   href="/components/Settings"
                   className="text-white block bg-transparent w-fit h-fit ml-5"
@@ -395,7 +398,7 @@ const LandingPage = () => {
           </div>
         </div>
         <textarea
-          className={`bg-black h-[84vh] outline-none text-left overflow-hidden hover:overflow-y-scroll md:sticky md:top-10 border-2 ${fontsize} p-3 mb-8 md:m-0 md:p-10 w-full rounded-xl`}
+          className={`bg-black h-[84vh] md:mt-1 md:h-[83vh] outline-none text-left overflow-hidden hover:overflow-y-scroll md:sticky md:top-10 border-2 ${fontsize} p-3 mb-8 md:m-0 md:p-10 w-full rounded-xl`}
           ref={inputRef}
           placeholder="Enter new notes here..."
           rows={30}
