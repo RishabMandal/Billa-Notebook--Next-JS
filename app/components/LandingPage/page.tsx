@@ -98,8 +98,8 @@ const LandingPage = () => {
       animate="visible"
       className="bg-black h-screen w-full text-white p-3 md:p-10"
     >
-      <div className="text-5xl mb-10 font-semibold flex flex-wrap justify-between">
-        <div className="w-fit flex flex-row mt-7 md:mt-0 mx-auto md:mx-0">
+      <div className="text-5xl md:mb-10 font-semibold flex flex-wrap justify-between">
+        <div className="w-fit flex flex-row mt-3 my-6 md:mt-0 mx-auto md:mx-0">
           <img
             className="invert text-red-600 w-fit h-[3rem] hover:rotate-180 duration-200"
             src="https://img.icons8.com/pastel-glyph/64/000000/cat-back-view.png"
@@ -301,7 +301,7 @@ const LandingPage = () => {
                 onClick={() => alert("Coming soon....")}
                 // onMouseEnter={handleHover}
                 // onMouseLeave={handleHover}
-                className="bg-white my-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
+                className="bg-white my-3 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
               >
                 <Link href="/components/FilesUpload">
                   {/* <Link href="/components/FilesUpload">View uploaded files</Link> */}
@@ -326,7 +326,7 @@ const LandingPage = () => {
                 </Link>
               </div>
               <div
-                className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
+                className="bg-white mt-3 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
                 onClick={() => {
                   setTextareaNotes(inputRef.current.value);
                   window?.navigator?.vibrate?.(125);
@@ -339,7 +339,7 @@ const LandingPage = () => {
                 />
               </div>
               <div
-                className="bg-white mt-5 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
+                className="bg-white mt-3 sticky z-20 text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-2xl cursor-pointer"
                 onClick={() => {
                   navigator.clipboard.writeText(inputRef.current.value);
                   // alert("Clipboard has been updated");
@@ -355,7 +355,7 @@ const LandingPage = () => {
             </motion.div>
           )}
           <Alert open={open} setOpen={setOpen} title="Copied to Clipboard!" />
-          <div className="mt-5 flex flex-row items-center">
+          <div className="mt-3 flex flex-row items-center">
             <div onClick={() => setOpenNavbar(!openNavbar)}>
               <CgMoreO size={30} />
             </div>
