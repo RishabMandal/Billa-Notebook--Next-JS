@@ -1,12 +1,12 @@
 "use client";
 
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-import { useState } from "react";
 import { storage } from "../../../firebase";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import "./fileupload.css";
+import "material-icons/iconfont/material-icons.css";
 
 const FilesUpload = () => {
   const [fileUrls, setfileUrls] = useState([]);
@@ -39,8 +39,8 @@ const FilesUpload = () => {
   }, []);
   // };
 
-  const [file, setFile] = useState();
-  const fileRef = useRef();
+  // const [file, setFile] = useState();
+  // const fileRef = useRef();
 
   const variants = {
     hidden: {
@@ -54,6 +54,43 @@ const FilesUpload = () => {
         duration: 0.3,
       },
     },
+  };
+
+  // File drag new
+  // Drag and drop, or browse your files
+  const [isDragOver, setIsDragOver] = useState(false);
+  // const [selectedFile, setSelectedFile] = useState(null);
+  // const fileInputRef = useRef(null);
+  const [file, setFile] = useState();
+  const fileRef = useRef();
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setIsDragOver(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragOver(false);
+    const files = e.dataTransfer.files;
+    // Process dropped files here
+    handleFileSelect(files[0]);
+  };
+
+  const handleClick = () => {
+    // fileInputRef.current.click();
+    fileRef.current.click();
+  };
+
+  const handleFileSelect = (file) => {
+    setFile(file);
+    // Process selected file here
+    console.log(file);
   };
 
   return (
@@ -72,26 +109,68 @@ const FilesUpload = () => {
         >
           FilesUpload
         </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <input ref={fileRef} type="file" />
-        </motion.div>
+        </motion.div> */}
+        <div
+          className={`file-drop-container ${isDragOver ? "drag-over" : ""}`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          {/* {selectedFile ? (
+            <div className="file-name">{selectedFile.name}</div>
+          ) : ( */}
+          {file ? (
+            <div className="file-name">{file.name}</div>
+          ) : (
+            <div>
+              {/* <BiArrowFromBottom size={45} /> */}
+              <span class="material-icons" style={{ fontSize: "3vw" }}>
+                upload
+              </span>
+              <div className="file-drop-message" style={{ fontSize: "1.66vw" }}>
+                Drag and drop, or
+                <div
+                  className="inline"
+                  style={{
+                    color: "#0078AD",
+                    marginLeft: "0.333vw",
+                    marginRight: "0.333vw",
+                  }}
+                  onClick={handleClick}
+                >
+                  browse
+                </div>
+                your files
+              </div>
+            </div>
+          )}
+          <input
+            type="file"
+            // ref={fileInputRef}
+            ref={fileRef}
+            onChange={(e) => handleFileSelect(e.target.files[0])}
+            style={{ display: "none" }}
+          />
+        </div>
         <motion.div
           initial={{ y: 50 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <button
+          {/* <button
             className="mx-auto my-5 bg-white block text-black rounded-full font-bold border-2 border-gray-800 hover:border-white hover:bg-black hover:text-white transition ease-in px-4 py-3 text-xl cursor-pointer"
             onClick={() => {
               setFile(fileRef.current.value);
             }}
           >
             Upload
-          </button>
+          </button> */}
           <motion.button
             onClick={() => {
               handleFileUpload(file);
@@ -105,8 +184,8 @@ const FilesUpload = () => {
           </motion.button>
         </motion.div>
       </div>
-      <div>
-        <div className="mx-auto">
+      <div className="mx-auto">
+        <div>
           <motion.div
             initial="hidden"
             animate="visible"

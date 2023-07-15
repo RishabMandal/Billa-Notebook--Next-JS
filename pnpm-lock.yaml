@@ -38,6 +38,9 @@ dependencies:
   framer-motion:
     specifier: ^10.12.18
     version: 10.12.18(react-dom@18.2.0)(react@18.2.0)
+  material-icons:
+    specifier: ^1.13.8
+    version: 1.13.8
   next:
     specifier: 13.4.9
     version: 13.4.9(@babel/core@7.22.8)(react-dom@18.2.0)(react@18.2.0)
@@ -5938,6 +5941,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       object-visit: 1.0.1
+    dev: false
+
+  /material-icons@1.13.8:
+    resolution: {integrity: sha512-vnLGXKa/AwFUxUgkiX39EpYVFttPhDQcKdVylIqmUUqz+Eo/O9A3BkdPCU3/G5cJOTezHi5B/b8sEpKYgUNAwQ==}
     dev: false
 
   /memoize-one@5.2.1:

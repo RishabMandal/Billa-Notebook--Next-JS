@@ -20,6 +20,7 @@
     "eslint-config-next": "13.4.9",
     "firebase": "^10.0.0",
     "framer-motion": "^10.12.18",
+    "material-icons": "^1.13.8",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",

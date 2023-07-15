@@ -1,0 +1,32 @@
+.file-drop-container {
+    border: 2px dashed #c4c4c4;
+    margin-left: 2.778vw;
+    margin-right: 2.778vw;
+    /* background-color: #f5f5f5; */
+    background-color: black;
+    height: 16.333vw;
+    padding: 2.222vw;
+    padding-bottom: 1.389vw;
+    border-radius: 1.111vw;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease;
+  }
+  
+  .file-drop-container.drag-over {
+    border-color: #ff6b6b;
+  }
+  
+  .file-drop-message {
+    font-size: 1.2rem;
+    margin-bottom: 1.111vw;
+  }
+  
+  /* Additional styles for input[type="file"] */
+  input[type="file"] {
+    display: none;
+  }
